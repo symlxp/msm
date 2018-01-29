@@ -18,7 +18,7 @@
         //regulator-max-microvolt = <1350000>;
 	//New values
 	regulator-min-microvolt = <1050000>;
-	regulator-max-microvolt = <1340000>;
+	regulator-max-microvolt = <1335000>;
 	qcom,auto-mode-enable = <1>;
 	qcom,soft-start-enable = <1>;
 	qcom,vs-soft-start-strength = <2>;
@@ -33,9 +33,9 @@
 	//qcom,cpr-voltage-floor =   <1150000 1150000 1250000>;
 	//qcom,cpr-init-voltage-ref = <1155000 1225000 1350000>;
 	//New values
-	qcom,cpr-voltage-ceiling = <1155000 1200000 1340000>;
-	qcom,cpr-voltage-floor = <1150000 1150000 1250000>;
-	qcom,cpr-init-voltage-ref = <1155000 1200000 1340000>;
+	qcom,cpr-voltage-ceiling = <1150000 1200000 1335000>;
+	qcom,cpr-voltage-floor = <1140000 1150000 1250000>;
+	qcom,cpr-init-voltage-ref = <1150000 1200000 1335000>;
 	//CPU Frequencies Map
 	qcom,cpr-corner-map = <1 1 1 1 1 2 2 3 3 3 3>;
 	qcom,cpr-corner-frequency-map =
