@@ -18,7 +18,7 @@
         //regulator-max-microvolt = <1350000>;
 	//New values
 	regulator-min-microvolt = <1050000>;
-	regulator-max-microvolt = <1350000>;
+	regulator-max-microvolt = <1340000>;
 	qcom,auto-mode-enable = <1>;
 	qcom,soft-start-enable = <1>;
 	qcom,vs-soft-start-strength = <2>;
@@ -33,9 +33,9 @@
 	//qcom,cpr-voltage-floor =   <1150000 1150000 1250000>;
 	//qcom,cpr-init-voltage-ref = <1155000 1225000 1350000>;
 	//New values
-	qcom,cpr-voltage-ceiling = <1155000 1200000 1350000>;
+	qcom,cpr-voltage-ceiling = <1155000 1200000 1340000>;
 	qcom,cpr-voltage-floor = <1150000 1150000 1250000>;
-	qcom,cpr-init-voltage-ref = <1155000 1200000 1350000>;
+	qcom,cpr-init-voltage-ref = <1155000 1200000 1340000>;
 	//CPU Frequencies Map
 	qcom,cpr-corner-map = <1 1 1 1 1 2 2 3 3 3 3>;
 	qcom,cpr-corner-frequency-map =
@@ -101,4 +101,16 @@
                         <  998400 >,
                         < 1094400 >,
                         < 1209600 >;
+};
+//GPU Settings
+&msm_gpu{
+	//Special features:
+	qcom,strtstp-sleepwake; //prevent clock up when isn't needed.
+	qcom,tsens-name = "tsens_tz_sensor10"; //enable sensor name for GPU temperature monitoring 
+	qcom,gx-retention; //Enable regulator retention level for IDLE modes
+	qcom,soft-start-enable = <1>; //enable soft start to start without current peaks that can damage device
+	qcom,hpm-enable = <1>; //enable high power mode
+	//qcom,boost-current-limit = <14>; //3200mA maximum
+	com,ocp-enable = <1>; //enables over current protection
+	qcom,l2pc-cpu-mask = <0x000000F0>; // Avoid L2PC on big cluster CPUs (CPU 4,5,6,7)
 };
